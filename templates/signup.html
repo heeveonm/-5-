@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+
+    <!-- 브라우저 단독 실행용 상대경로 -->
+    <link rel="stylesheet" href="../static/css/signup.css">
+</head>
+
+<body class="signup-body">
+    <div class="signup-container">
+        <div class="signup-logo">📝</div>
+        <h2>회원가입</h2>
+
+        <form id="signup-form">
+
+            <!-- 아이디 -->
+            <div class="input-container">
+                <input type="text" placeholder="ID를 입력하세요" class="input-field" id="signup-id">
+            </div>
+
+            <!-- 이름 -->
+            <div class="input-container">
+                <input type="text" placeholder="이름을 입력하세요" class="input-field" id="signup-name">
+            </div>
+
+            <!-- 비밀번호 -->
+            <div class="input-container">
+                <input type="password" placeholder="비밀번호를 입력하세요" class="input-field" id="signup-password">
+                <span class="toggle-password" id="signup-toggle-password">보기</span>
+            </div>
+
+            <!-- 비밀번호 확인 -->
+            <div class="input-container">
+                <input type="password" placeholder="비밀번호를 다시 입력하세요" class="input-field" id="signup-password-confirm">
+            </div>
+
+            <button type="submit" class="btn" id="signup-btn">회원가입</button>
+        </form>
+
+        <div class="signup-subtext">
+            이미 계정이 있으신가요?
+            <a href="#">로그인 하기</a> 
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="../static/js/signup.js"></script>
+</body>
+</html>

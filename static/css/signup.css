@@ -1,0 +1,95 @@
+/* ===================================================================
+   회원가입 페이지 전용 스타일
+   =================================================================== */
+
+/* 로그인 때 .login-body 썼으니까, 회원가입은 .signup-body */
+.signup-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* common.css 에서 폰트/배경 상속 */
+}
+
+.signup-container {
+    background: #ffffff;
+    padding: 40px 35px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 390px;
+}
+
+.signup-logo {
+    font-size: 45px;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+.signup-container h2 {
+    margin-bottom: 20px;
+    font-size: 22px;
+    color: #333;
+}
+
+.input-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: var(--font-size-base);
+    box-sizing: border-box;
+}
+
+.input-field[type="password"] {
+    padding-right: 50px;
+}
+
+.toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #007bff;
+    user-select: none;
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    background: #007bff;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-size: var(--font-size-lg);
+    cursor: pointer;
+    transition: background 0.3s ease;
+    box-sizing: border-box;
+}
+
+.btn:hover {
+    background: #0056b3;
+}
+
+/* 아래는 작은 안내 텍스트 (이미 계정이 있나요? 등) */
+.signup-subtext {
+    margin-top: 10px;
+    font-size: var(--font-size-sm);
+    color: #666;
+}
+.signup-subtext a {
+    color: #007bff;
+    text-decoration: none;
+}
+.signup-subtext a:hover {
+    text-decoration: underline;
+}
