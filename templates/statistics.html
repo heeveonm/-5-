@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가계부 통계</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/common.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/statistics.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+    <script src="{{ url_for('static', filename='js/statistics.js') }}"></script>
+</head>
+
+<body>
+   
+    {% include "_header.html" %}
+    
+    <!-- 탭 네비게이션 -->
+    <nav class="tabs" role="tablist">
+        <button class="tab active" data-panel="monthlyTotal">월간 합계</button>
+        <button class="tab" data-panel="monthlySpend">월간 지출</button>
+        <button class="tab" data-panel="weeklyTotal">주간 합계</button>
+    </nav>
+
+    <main class="wrap">
+        <!-- 월간 합계 -->
+        <section class="card narrow panel" id="monthlyTotal">
+            <h3>이 달의 합계</h3>
+            <div class="sub">기간: <span id="rangeMonthly"></span></div>
+            <div class="kpi">
+                <div class="big" id="mtSum">0원</div>
+                <div class="delta" id="mtDelta"></div>
+            </div>
+            <div class="chart"><canvas id="chartMonthlyTotal"></canvas></div>
+            <div class="legend"><span><span class="box primary"></span>이번달</span></div>
+        </section>
+
+        <!-- 월간 지출 (지난달과 합치기) -->
+        <section class="card narrow panel hidden" id="monthlySpend">
+            <h3>월간 지출 (지난달과 비교)</h3>
+            <div class="sub">기간: <span id="rangeMonthlySpend"></span></div>
+            <div class="kpi">
+                <div class="big" id="msSum">0원</div>
+                <div class="delta" id="msDelta">지난달보다 0원 더 쓰는 중</div>
+            </div>
+            <div class="chart"><canvas id="chartMonthlySpend"></canvas></div>
+            <div class="legend">
+                <span><span class="box primary"></span>이번달</span>
+                <span><span class="box grey"></span>지난달</span>
+        </div>
+
+        <div id="categoryBreak" class="pills"></div>
+            <p class="muted small">카테고리 분류: 이번달 지출 비중(%)</p>
+        </section>
+
+        <!-- 주간 합계 -->
+        <section class="card narrow panel hidden" id="weeklyTotal">
+            <h3>주간 합계</h3>
+            <div class="sub">최근 10주</div>
+            <div class="kpi"><div class="big" id="wtSum">0원</div></div>
+            <div class="chart"><canvas id="chartWeekly"></canvas></div>
+            <div class="legend"><span><span class="box primary"></span>주간 합계</span></div>
+        </section>
+
+        <!-- 이번 달 남은 돈 카드 -->
+        <section class="card narrow" id="balanceCard">
+            <div class="card-head">
+                <h3>이번 달 남은 돈</h3>
+                <div class="sub" id="balanceAsOf">이번 달 기준</div>
+            </div>
+
+            <div class="balance-grid">
+                <div class="row">
+                    <div class="label">수입</div>
+                    <div class="val" id="incomeTotal">0원</div>
+                </div>
+                <div class="row">
+                    <div class="label">소비</div>
+                    <div class="val" id="expenseTotal">0원</div>
+                </div>
+                <div class="row indent">
+                    <div class="label">카드로 쓴 돈</div>
+                    <div class="val" id="expenseCard">0원</div>
+                </div>
+                <div class="row indent">
+                    <div class="label">계좌 이체</div>
+                    <div class="val" id="expenseTransfer">0원</div>
+                </div>
+                <div class="row indent">
+                    <div class="label">페이·기타</div>
+                    <div class="val" id="expenseOther">0원</div>
+                </div>
+                <div class="row total">
+                    <div class="label">남은 금액</div>
+                    <div class="val remain" id="remainAmount">0원</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

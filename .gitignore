@@ -1,0 +1,37 @@
+# Created by https://www.toptal.com/developers/gitignore/api/react
+# Edit at https://www.toptal.com/developers/gitignore?templates=react
+
+### react ###
+.DS_*
+*.log
+logs
+**/*.backup.*
+**/*.back.*
+
+node_modules
+bower_components
+git
+*.sublime*
+
+psd
+thumb
+sketch
+
+# 개인 데이터 파일
+transactions.json
+
+py/config.py
+py/__init__.py
+
+modules/config.py
+modules/__init__.py
+modules/__pycache__
+*.pyc
+
+# vscode 자동생성 파일
+.vscode
+
+# 프로젝트 전용 파이썬 가상환경
+.venv 
+
+# End of https://www.toptal.com/developers/gitignore/api/react

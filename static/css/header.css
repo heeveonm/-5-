@@ -1,0 +1,40 @@
+/* =================================
+   공용 헤더 (.topbar) 스타일
+   ================================= */
+
+/* 전체 헤더바를 감싸는 컨테이너 */
+/* - display:flex: 자식 요소(좌측 링크, 우측 정보)를 가로로 배치 */
+/* - justify-content:space-between: 좌측/우측 요소를 양쪽 끝으로 보냄 */
+.topbar{
+	display:flex;
+	align-items:center;
+	justify-content:space-between;
+	padding:18px 20px 10px;
+}
+
+/* 헤더 좌측의 로고 또는 프로젝트 이름 링크 */
+.brand-link{
+	font-weight:800; 
+	color:#1f2a44; 
+	text-decoration:none;
+}
+
+/* 헤더 우측의 '사용자 이름'과 '로그아웃'을 묶는 컨테이너 */
+.topbar .right{
+	display:flex; 
+	align-items:center; 
+	gap:10px
+}
+
+/* 'OOO님' (사용자 이름) 텍스트 스타일 */
+.user{
+	color:#1f2a44; 
+	font-weight:700
+}
+
+/* '로그아웃' 텍스트 링크 스타일 */
+.logout{
+	color:#64748b; 
+	text-decoration:none; 
+	font-weight:600
+}

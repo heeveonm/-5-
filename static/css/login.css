@@ -1,0 +1,89 @@
+/* ===================================================================
+   로그인 페이지 전용 스타일
+   =================================================================== */
+
+/* 로그인 페이지의 body에 적용되어 폼을 화면 정중앙에 배치합니다. */
+.login-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* 화면 전체 높이를 차지하도록 설정 */
+}
+
+/* 로그인 폼을 감싸는 흰색 박스 */
+.login-container {
+    background: #ffffff;
+    padding: 40px 35px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+    text-align: center;
+    width: 390px;
+}
+
+/* 상단 '잠금' 아이콘 */
+.logo {
+    font-size: 45px;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+/* 'Login' 제목 텍스트 */
+.login-container h2 {
+    margin-bottom: 20px;
+    font-size: 22px;
+    color: #333;
+}
+
+/* 입력 필드(input)를 감싸는 컨테이너 (위치 기준점) */
+.input-container {
+    position: relative; /* '보기/숨김' 버튼의 위치 기준이 됨 */
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+/* 'ID', 'Password' 입력창 공통 스타일 */
+.input-field {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: var(--font-size-base); /* (common.css의 변수 사용) */
+    box-sizing: border-box; /* padding이 너비에 영향을 주지 않도록 함 */
+}
+
+/* 비밀번호 입력창일 경우, '보기' 버튼과 겹치지 않게 오른쪽 여백 추가 */
+.input-field[type="password"] {
+    padding-right: 50px;
+}
+
+/* '보기/숨김' 텍스트 버튼 스타일 */
+.toggle-password {
+    position: absolute; /* .input-container를 기준으로 위치 고정 */
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%); /* 세로 정중앙 정렬 */
+    cursor: pointer;
+    color: #007bff;
+    user-select: none; /* 텍스트가 드래그(선택)되지 않도록 함 */
+    font-size: var(--font-size-sm); /* (common.css의 변수 사용) */
+    font-weight: 600;
+}
+
+/* 'Sign In' 버튼 */
+.btn {
+    width: 100%;
+    padding: 12px;
+    background: #007bff;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-size: var(--font-size-lg); /* (common.css의 변수 사용) */
+    cursor: pointer;
+    transition: background 0.3s ease; /* 색상 변경 시 부드러운 효과 */
+    box-sizing: border-box;
+}
+
+/* 'Sign In' 버튼에 마우스를 올렸을 때 */
+.btn:hover {
+    background: #0056b3;
+}

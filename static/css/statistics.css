@@ -1,0 +1,205 @@
+/* ===================================================================
+   통계 페이지 전용 스타일
+   (참고: :root, *, body, .wrap, .card, .card h3 등
+    공용 스타일은 common.css에서 상속받아 사용합니다.)
+   =================================================================== */
+
+/* '월간 합계', '월간 지출' 등 탭(Tab) 버튼을 감싸는 영역 */
+.tabs {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 8px 16px 16px;
+}
+
+/* 탭 버튼 기본 스타일 */
+.tab {
+    background: #fff;
+    color: #4b5563;
+    border: 1px solid var(--border);
+    border-radius: 999px; /* 알약 모양 */
+    padding: 10px 14px;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(28, 44, 80, .06);
+}
+
+/* 'active' 클래스가 추가된 (선택된) 탭 버튼 스타일 */
+.tab.active {
+    background: var(--accent);
+    color: #fff;
+    border-color: transparent;
+}
+
+/* (유틸리티) 카드의 최대 너비를 760px로 제한 */
+.card.narrow {
+    max-width: 760px;
+}
+
+/* (유틸리티) 보조 텍스트 (연한 회색) */
+.sub {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* (유틸리티) 작은 텍스트 */
+.small {
+    font-size: 12px;
+}
+
+/* --- KPI (핵심 지표) --- */
+.kpi {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+/* KPI의 큰 숫자 (예: 180,000원) */
+.kpi .big {
+    font-weight: 800;
+    font-size: 22px;
+}
+
+/* KPI의 변화량 (예: +9,000원) */
+.kpi .delta {
+    font-size: 13px;
+    color: var(--danger); /* 공용 변수 (붉은색) */
+}
+
+/* --- 차트 (Chart) --- */
+.chart {
+    width: 100%;
+    height: 220px;
+    margin-top: 12px;
+}
+
+/* (아마도 D3.js 같은) SVG 차트 공통 스타일 */
+svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* SVG 차트의 배경 그리드 라인 */
+.grid line {
+    stroke: #eef2fb;
+    stroke-width: 1;
+}
+
+/* SVG 차트의 축(Axis) 텍스트 */
+.axis text {
+    fill: #9aa6bd;
+    font-size: 11px;
+}
+
+/* 차트 범례 (Legend) */
+.legend {
+    display: flex;
+    gap: 18px;
+    color: #6b7280;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+/* 범례의 색상 사각형 */
+.legend .box {
+    width: 18px;
+    height: 4px;
+    border-radius: 3px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 6px;
+}
+.legend .box.primary {
+    background: var(--accent);
+}
+.legend .box.grey {
+    background: var(--accent2);
+}
+
+/* --- Pills (알약 모양 태그) --- */
+.pills .pill {
+    background: #f1f6ff;
+    border: 1px solid var(--border);
+    color: #3a4a6a;
+    padding: 8px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    margin: 6px 6px 0 0;
+    display: inline-block;
+}
+
+/* --- 잔액/합계 카드 --- */
+.card-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.balance-grid {
+    display: grid;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+/* '수입', '소비' 등 각 항목 한 줄 */
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 0;
+    border-bottom: 1px dashed #edf2ff;
+}
+.row:last-child {
+    border-bottom: none;
+}
+/* '카드', '계좌이체' 등 들여쓰기 된 항목 */
+.row.indent {
+    padding-left: 16px;
+}
+
+/* 항목 레이블 (예: '수입', '소비') */
+.label {
+    color: #475569;
+    font-weight: 700;
+}
+
+/* 항목 값 (예: 568,752원) */
+.val {
+    font-weight: 700;
+}
+
+/* '남은 금액' 합계 행 */
+.total .label {
+    font-weight: 800;
+}
+
+/* '남은 금액' 값 (파란색) */
+.remain {
+    color: #2563eb;
+}
+
+/* (유틸리티) 연한 회색 텍스트 */
+.muted {
+    color: var(--muted);
+}
+
+/* (유틸리티) 요소 숨기기 */
+.hidden {
+    display: none;
+}
+
+/* --- Chart.js 캔버스 --- */
+/* (기본 .chart 높이를 덮어쓰기 위해 아래에 배치) */
+.chart {
+    height: 260px;
+}
+
+/* Chart.js 캔버스가 부모 영역(.chart)에 꽉 차도록 설정 */
+.chart canvas {
+    width: 100% !important;
+    height: 100% !important;
+}

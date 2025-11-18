@@ -1,0 +1,14 @@
+<header class="topbar">
+    {% if request.path == url_for('ledger_view') %}
+    <a href="{{ url_for('statistics_view') }}"
+        class="brand-link">통계 페이지</a>
+    {% elif request.path == url_for('statistics_view') %}
+    <a href="{{ url_for('ledger_view') }}"
+        class="brand-link">입출금 내역</a>
+    {% endif %}
+    
+    <div class="right">
+        <span id="userName" class="user">{{ username }}님</span>
+        <a class="logout" href="{{ url_for('logout') }}">로그아웃</a>
+    </div>
+</header>

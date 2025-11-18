@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Login Page</title>
+	
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/common.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+
+<body class="login-body">
+	<div class="login-container">
+		<div class="logo">🔒</div>
+		<h2>Login</h2>
+		<form>
+		<div class="input-container">
+			<input type="text" placeholder="Enter your ID" class="input-field" required id="id-field">
+		</div>
+		<div class="input-container">
+			<input type="password" placeholder="Enter your password" id="password-field" class="input-field" required>
+			<span class="toggle-password" id="toggle-password">보기</span>
+		</div>
+		<button type="submit" class="btn" id="login-btn">Sign In</button>
+		</form>
+	</div>
+
+  	<script src="{{ url_for('static', filename='js/login.js') }}"></script>
+
+</body>
+</html>
